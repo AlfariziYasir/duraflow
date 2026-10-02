@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: duraflow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: duraflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - duraflow_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d duraflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  duraflow_postgres_data:
