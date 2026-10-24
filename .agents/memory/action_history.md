@@ -49,3 +49,22 @@
   - `migrations/000001_init_duraflow.up.sql` (4 core tables + indexes).
   - `go.mod` setup with `pgx/v5`, `google/uuid`, and `testify`.
   - `internal/platform/db/pool.go` with high-performance `pgxpool.Config`.
+
+## 2026-10-21: Frontend Project Structure Initialized (Single-Binary Embedded SPA)
+- **Design Alignment:**
+  - Implemented high-density console architecture reflecting the 4 PostgreSQL tables and 17 History Event types.
+  - Preserved single-binary deployment model via Go `//go:embed dist/*` in `web/embed.go`.
+- **Frontend Stack Configured:**
+  - Setup `web/` using React 18, `@xyflow/react` (interactive DAG visualizer), Tailwind CSS, Lucide icons, and Vite.
+  - Added domain types in `web/src/api/types.ts`, REST client in `web/src/api/client.ts`, and SSE hook in `web/src/api/sse.ts`.
+  - Scaffolded views: `ExecutionsView` (fleet explorer), `ExecutionDetailView` (cockpit split pane with DAG, timeline, scrubber, and modals for Signals/Queries/Updates), `QueuesView` (task queues & poller telemetry), and `DefinitionsView` (DAG schemas).
+  - Verified compilation: `bun run build` and `go build ./web` both pass cleanly with 0 errors.
+  - Plan documented at `.agents/plans/FRONTEND_ARCHITECTURE_AND_STRUCTURE.md`.
+
+## 2026-10-21: Full Command Center Design Template Integrated
+- **Action Taken:**
+  - Extracted user's temporary design from `/home/mohyasiralfarizi/Downloads/duraflow-distributed-orchestration-command.zip`.
+  - Integrated into `web/`: 5 full views (`WorkflowsView`, `ExecutionGraphView`, `NodesWorkersView`, `EventLogView`, `SettingsView`), layout components (`Sidebar`, `Header`), modals (`CommandPalette`, `NewWorkflowModal`, `ProvisionWorkerModal`, `Toast`), and design tokens (`index.css`).
+  - Modernized dependencies to React 19, Tailwind CSS v4 (`@tailwindcss/vite`), and Motion (`motion`). Stripped unneeded packages (`express`, `@google/genai`, `dotenv`).
+  - Eliminated all `: any` and `as any` instances to comply with strict TypeScript rules.
+  - Verified build: `bun run build` completed in 1.91s (`web/dist` generated); `go build ./web` compiled cleanly via `embed.FS`.
