@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"error-container":"#93000a","inverse-primary":"#00668a","secondary-fixed-dim":"#c0c1ff","on-error-container":"#ffdad6","inverse-surface":"#dfe2ef","background":"#0f131c","surface-container-highest":"#31353f","outline-variant":"#3e484f","surface-variant":"#31353f","on-background":"#dfe2ef","secondary-fixed":"#e1e0ff","tertiary-container":"#f59e0b","primary-fixed-dim":"#7bd0ff","on-primary-fixed":"#001e2c","primary":"#8ed5ff","on-surface":"#dfe2ef","on-primary":"#00354a","on-secondary":"#1000a9","on-primary-container":"#004965","on-tertiary-container":"#613b00","inverse-on-surface":"#2c303a","on-primary-fixed-variant":"#004c69","primary-fixed":"#c4e7ff","surface-dim":"#0f131c","on-secondary-fixed":"#07006c","tertiary-fixed-dim":"#ffb95f","on-tertiary-fixed":"#2a1700","surface-container-low":"#181b25","primary-container":"#38bdf8","on-tertiary-fixed-variant":"#653e00","on-tertiary":"#472a00","tertiary":"#ffc174","surface-tint":"#7bd0ff","surface-bright":"#353943","on-secondary-fixed-variant":"#2f2ebe","on-error":"#690005","on-secondary-container":"#b0b2ff","surface-container-high":"#262a34","surface-container":"#1c1f29","surface":"#0f131c","error":"#ffb4ab","outline":"#87929a","secondary":"#c0c1ff","surface-container-lowest":"#0a0e17","tertiary-fixed":"#ffddb8","secondary-container":"#3131c0","on-surface-variant":"#bdc8d1"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xs":"0.25rem","space-lg":"1.25rem","gutter-lg":"1.5rem","space-xl":"1.5rem","space-2xl":"2rem","space-base":"1rem","space-md":"0.75rem","space-sm":"0.5rem","space-xxs":"0.125rem","gutter-sm":"0.5rem","margin":"1.5rem","margin-mobile":"1rem","gutter":"1rem"},"fontFamily":{"headline-md":["Geist"],"caption":["JetBrains Mono"],"headline-sm":["Geist"],"display-lg-mobile":["Geist"],"display-lg":["Geist"],"stat-metric":["JetBrains Mono"],"body-base":["JetBrains Mono"],"label-xs":["JetBrains Mono"],"title-base":["Geist"],"body-bold":["JetBrains Mono"],"code-sm":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"caption":["11px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"800"}],"stat-metric":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-base":["13px",{"lineHeight":"20px","letterSpacing":"0","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"title-base":["15px",{"lineHeight":"22px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-bold":["13px",{"lineHeight":"20px","letterSpacing":"0","fontWeight":"600"}],"code-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-base text-body-base text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="flex flex-col"><div class="h-14 px-space-base flex items-center gap-space-sm bg-surface-container-low/50"><img alt="DuraFlow Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WLbZRiVYw8jzKQ0nmxcuxsEyYbMq8mtUfOP6t239dX9PQomPNXVcCMmxutYUjwQOpy80uIH7F3Ev-ENK1l4-Vy1ZB2TJ7P48Md15AzByY4VwL90CFfhkI5DFprRZ-pZrB-UCxCKhYtvja5XZ0BAtf7PJxxY7Sab_LQNAVzJXJnfMYQr_0kPVGpra83XPn-pLOaQ-hsw-9qElKGCxkNVdCnLPoH7mhnkLonW9qP3IcGXEYhpEROz7wf0DLm"/><span class="font-title-base text-title-base font-bold tracking-tight text-on-surface">DuraFlow</span><span class="font-label-xs text-label-xs px-space-xs py-space-xxs bg-surface-container-high text-primary rounded border border-outline-variant/30">v1.4-prod</span></div><div class="px-space-base pt-space-md pb-space-xs"><span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Control Plane</span></div><nav class="flex flex-col gap-space-xxs px-space-sm" data-active-classes="bg-surface-container-high text-primary font-body-bold rounded-lg border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="workflows-and-pipelines" href="#"><span class="material-symbols-outlined text-[18px]">schema</span><span class="font-body-base text-body-base">Workflows & Pipelines</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="execution-graph-and-visualizer" href="#"><span class="material-symbols-outlined text-[18px]">account_tree</span><span class="font-body-base text-body-base">Execution Graph</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-surface-container-high text-primary font-body-bold rounded-lg border-l-2 border-primary" data-path="cluster-nodes-and-workers" href="#"><span class="material-symbols-outlined text-[18px]">dns</span><span class="font-body-base text-body-base">Nodes & Workers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="event-log-and-audit-traces" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="font-body-base text-body-base">Event Log & Traces</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="settings-and-cluster-configuration" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-base text-body-base">Settings & Cluster</span></a></nav></div><div class="p-space-sm m-space-sm rounded-lg bg-surface-container-low/70 flex flex-col gap-space-xs"><div class="flex items-center justify-between text-outline-variant"><span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Broker Sync State</span><span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span></div><div class="flex items-center justify-between"><span class="font-code-sm text-code-sm text-outline">Ack Latency</span><span class="font-caption text-caption text-primary">0.42 ms</span></div><div class="flex items-center justify-between"><span class="font-code-sm text-code-sm text-outline">Committed Seq</span><span class="font-code-sm text-code-sm text-on-surface">#891,204</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.15)]"><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-sm py-space-xxs rounded bg-surface-container-low text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">cloud_queue</span><span class="font-caption text-caption text-on-surface">us-east-cluster-primary</span><span class="font-label-xs text-label-xs text-primary bg-primary/10 px-space-xxs rounded">Active</span><span class="material-symbols-outlined text-[14px] text-outline">unfold_more</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xxs rounded bg-surface-container-low/60"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span><span class="font-caption text-caption text-on-surface-variant">Healthy • 99.98% uptime</span></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-sm px-space-md py-space-xs rounded bg-surface-container-low text-outline w-64"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-caption text-caption">Find event, pipeline, node...</span><kbd class="font-label-xs text-label-xs ml-auto px-space-xs py-space-xxs bg-surface-container text-on-surface-variant rounded">⌘K</kbd></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Documentation"><span class="material-symbols-outlined text-[18px]">menu_book</span></button><button class="relative w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Alerts"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error-container"></span></button></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-title-base text-title-base text-on-surface leading-tight">Alex Chen</span><span class="font-label-xs text-label-xs text-outline">Platform Architect</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvIkbLWUQDnXGCjJp3WrBss40dpr-MeX5xDSypLITLjDVi4HysMCsrmG_bPCPT2ioPr8oATKZ9x2qrDwhwqnLadUuqQFe3YRxp7ZEb9ytHrrSX1F7IFlEG-tDUQHP7UymFhU1K3U-fmZiK4ldnrvbTVSPHlsenIE1CkPXsOovZQw_vKU1joZ2TQZuyVVXzfz4rM5LhyhEcFY2ZA8zNBaCHBc3QEiXNrySeZC0bvKWVlsadZOctrBHIJQ"/></div></div></header><main class="relative pt-14 w-full min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Dynamic Atmospheric Glow -->
+<div class="relative w-full overflow-hidden px-space-xl py-space-xl flex flex-col gap-space-xl">
+<div class="pointer-events-none absolute -top-32 -left-32 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="pointer-events-none absolute top-48 right-12 w-80 h-80 bg-secondary-container/15 rounded-full blur-3xl"></div>
+<!-- Page Header & Action Bar -->
+<header class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg relative z-10">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">Cluster Infrastructure & Worker Pools</span>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xxs rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-caption text-caption text-primary">12 Nodes Online • 640/720 Workers Active</span>
+</div>
+</div>
+<p class="font-body-base text-body-base text-outline">
+          Multi-region deterministic execution runtime. Monotonic consensus fence: <span class="font-code-sm text-code-sm text-on-surface">term_epoch_v4#82910</span>
+</p>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="px-space-md py-space-xs rounded bg-surface-container-high text-on-surface font-title-base text-title-base shadow-sm hover:bg-surface-variant transition-all flex items-center gap-space-xs" id="btnMaintenance" onclick="toggleMaintenanceMode()">
+<span class="material-symbols-outlined text-[16px] text-tertiary">pause_circle</span>
+<span>Maintenance Mode</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container-high text-on-surface font-title-base text-title-base shadow-sm hover:bg-surface-variant transition-all flex items-center gap-space-xs" onclick="triggerRebalance()">
+<span class="material-symbols-outlined text-[16px] text-primary">sync_alt</span>
+<span>Rebalance Cluster</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-title-base text-title-base shadow-md hover:bg-primary transition-all flex items-center gap-space-xs" onclick="openProvisionModal()">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>+ Provision Worker Pool</span>
+</button>
+</div>
+</header>
+<!-- Global Fleet Telemetry Metrics Bento -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-base relative z-10">
+<!-- CPU Metric -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-outline">
+<span class="font-caption text-caption uppercase tracking-wider">Aggregate CPU Load</span>
+<span class="material-symbols-outlined text-[18px] text-primary">memory</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-stat-metric text-stat-metric text-on-surface">64.2%</span>
+<span class="font-caption text-caption text-outline">/ 96 Cores</span>
+</div>
+<div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 64.2%;"></div>
+</div>
+<div class="mt-space-xs flex justify-between text-outline font-label-xs text-label-xs">
+<span>Dynamic throttle: 85%</span>
+<span class="text-primary font-caption text-caption">Nominal</span>
+</div>
+</div>
+</div>
+<!-- Memory Metric -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-outline">
+<span class="font-caption text-caption uppercase tracking-wider">Aggregate Memory</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">storage</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-stat-metric text-stat-metric text-on-surface">182.4 GB</span>
+<span class="font-caption text-caption text-outline">/ 256 GB (71%)</span>
+</div>
+<div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 71.25%;"></div>
+</div>
+<div class="mt-space-xs flex justify-between text-outline font-label-xs text-label-xs">
+<span>Free buffer: 73.6 GB</span>
+<span class="text-secondary font-caption text-caption">Slab Cache OK</span>
+</div>
+</div>
+</div>
+<!-- Network I/O Metric -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-outline">
+<span class="font-caption text-caption uppercase tracking-wider">Network Throughput</span>
+<span class="material-symbols-outlined text-[18px] text-primary">swap_vert</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-outline">Ingress ↓</span>
+<span class="font-stat-metric text-stat-metric text-on-surface">4.8 <span class="font-caption text-caption text-outline">Gbps</span></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-caption text-caption text-outline">Egress ↑</span>
+<span class="font-stat-metric text-stat-metric text-primary-fixed-dim">3.2 <span class="font-caption text-caption text-outline">Gbps</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-label-xs text-label-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>SR-IOV Direct Ring Buffer active</span>
+</div>
+</div>
+<!-- Distributed Locks / Mutexes -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between text-outline">
+<span class="font-caption text-caption uppercase tracking-wider">Consensus Leases</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">lock</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-stat-metric text-stat-metric text-on-surface">1,842</span>
+<span class="font-caption text-caption text-tertiary">Distributed Mutexes</span>
+</div>
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs">
+<span class="text-on-surface-variant font-code-sm text-code-sm">Raft Quorum: 5/5 synced</span>
+<span class="text-tertiary font-caption text-caption">0 Stale Fences</span>
+</div>
+</div>
+</section>
+<!-- Interactive Filter & Grouping Control Bar -->
+<section class="p-space-sm bg-surface-container-low rounded-lg shadow-sm flex flex-wrap items-center justify-between gap-space-sm relative z-10">
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Region Dropdown/Filter -->
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container text-on-surface font-caption text-caption">
+<span class="material-symbols-outlined text-[15px] text-outline">public</span>
+<span class="text-outline">Region:</span>
+<select class="bg-transparent text-on-surface border-none outline-none cursor-pointer font-code-sm text-code-sm" id="filterRegion" onchange="filterNodes()">
+<option class="bg-surface-container text-on-surface" value="all">All Regions (3)</option>
+<option class="bg-surface-container text-on-surface" value="us-east">us-east (3 nodes)</option>
+<option class="bg-surface-container text-on-surface" value="us-west">us-west (1 node)</option>
+<option class="bg-surface-container text-on-surface" value="eu-central">eu-central (1 node)</option>
+</select>
+</div>
+<!-- Worker Pool Type -->
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container text-on-surface font-caption text-caption">
+<span class="material-symbols-outlined text-[15px] text-outline">tune</span>
+<span class="text-outline">Pool Type:</span>
+<select class="bg-transparent text-on-surface border-none outline-none cursor-pointer font-code-sm text-code-sm" id="filterType" onchange="filterNodes()">
+<option class="bg-surface-container text-on-surface" value="all">All Pool Types</option>
+<option class="bg-surface-container text-on-surface" value="compute-intensive">Compute-Intensive (C6i)</option>
+<option class="bg-surface-container text-on-surface" value="memory-buffered">Memory-Buffered (R6g)</option>
+<option class="bg-surface-container text-on-surface" value="io-optimized">IO-Optimized (I3en)</option>
+</select>
+</div>
+<!-- Health State Tabs -->
+<div class="flex items-center gap-space-xxs bg-surface-container-lowest p-space-xxs rounded">
+<button class="health-btn px-space-sm py-space-xxs rounded font-caption text-caption bg-surface-container-high text-primary" data-health="all" onclick="setHealthFilter('all')">All</button>
+<button class="health-btn px-space-sm py-space-xxs rounded font-caption text-caption text-on-surface-variant hover:text-on-surface" data-health="healthy" onclick="setHealthFilter('healthy')">Healthy (4)</button>
+<button class="health-btn px-space-sm py-space-xxs rounded font-caption text-caption text-on-surface-variant hover:text-on-surface" data-health="busy" onclick="setHealthFilter('busy')">High Load (1)</button>
+<button class="health-btn px-space-sm py-space-xxs rounded font-caption text-caption text-on-surface-variant hover:text-on-surface" data-health="draining" onclick="setHealthFilter('draining')">Draining (1)</button>
+</div>
+</div>
+<!-- Quick Node Search & View Mode -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container text-outline">
+<span class="material-symbols-outlined text-[15px]">filter_list</span>
+<input class="bg-transparent text-on-surface placeholder:text-outline font-caption text-caption outline-none w-40" id="nodeSearch" oninput="filterNodes()" placeholder="Filter node ID, IP..." type="text"/>
+</div>
+<div class="flex items-center rounded bg-surface-container p-space-xxs">
+<button class="px-space-xs py-space-xxs rounded bg-surface-container-high text-primary" title="Grid View">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+</button>
+<button class="px-space-xs py-space-xxs rounded text-outline hover:text-on-surface" title="List View">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Worker Node Telemetry Grid Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-base relative z-10" id="nodeGrid">
+<!-- Card 1: worker-east-01 (Primary Leader) -->
+<article class="node-card p-space-base rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between transition-all hover:bg-surface-container" data-health="healthy" data-node="worker-east-01" data-region="us-east" data-type="compute-intensive">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-base text-title-base text-on-surface font-bold">worker-east-01</span>
+<span class="px-space-xs py-space-xxs rounded font-label-xs text-label-xs bg-primary-container/20 text-primary">Primary Leader</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">10.240.1.18 • us-east-1a</span>
+</div>
+<div class="inline-flex items-center gap-space-xxs px-space-xs py-space-xxs rounded bg-surface-container-high">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+<span class="font-label-xs text-label-xs text-[#10b981]">Healthy</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Workers Active</span>
+<span class="font-caption text-caption text-on-surface font-bold">64 <span class="font-code-sm text-code-sm text-outline font-normal">/ 64 slots</span></span>
+</div>
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Tasks</span>
+<span class="font-caption text-caption text-primary font-bold">12 running</span>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">CPU Utilization</span>
+<span class="text-on-surface font-code-sm text-code-sm">82%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 82%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-xs text-label-xs pt-space-xxs">
+<span class="text-outline">Memory Buffer</span>
+<span class="text-on-surface font-code-sm text-code-sm">54.2 GB / 64 GB</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[13px] text-primary">bolt</span>
+<span>Rendezvous Ping: <strong class="text-on-surface font-code-sm text-code-sm font-normal">1.2ms</strong></span>
+</div>
+<button class="text-primary hover:underline font-caption text-caption flex items-center gap-space-xxs" onclick="inspectNode('worker-east-01')">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 2: worker-east-02 (Worker Node) -->
+<article class="node-card p-space-base rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between transition-all hover:bg-surface-container" data-health="healthy" data-node="worker-east-02" data-region="us-east" data-type="compute-intensive">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-base text-title-base text-on-surface font-bold">worker-east-02</span>
+<span class="px-space-xs py-space-xxs rounded font-label-xs text-label-xs bg-surface-container-highest text-outline">Worker</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">10.240.1.19 • us-east-1b</span>
+</div>
+<div class="inline-flex items-center gap-space-xxs px-space-xs py-space-xxs rounded bg-surface-container-high">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+<span class="font-label-xs text-label-xs text-[#10b981]">Healthy</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Workers Active</span>
+<span class="font-caption text-caption text-on-surface font-bold">64 <span class="font-code-sm text-code-sm text-outline font-normal">/ 64 slots</span></span>
+</div>
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Tasks</span>
+<span class="font-caption text-caption text-primary font-bold">8 running</span>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">CPU Utilization</span>
+<span class="text-on-surface font-code-sm text-code-sm">48%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 48%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-xs text-label-xs pt-space-xxs">
+<span class="text-outline">Memory Buffer</span>
+<span class="text-on-surface font-code-sm text-code-sm">31.2 GB / 64 GB</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 48.7%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[13px] text-primary">bolt</span>
+<span>Rendezvous Ping: <strong class="text-on-surface font-code-sm text-code-sm font-normal">1.4ms</strong></span>
+</div>
+<button class="text-primary hover:underline font-caption text-caption flex items-center gap-space-xxs" onclick="inspectNode('worker-east-02')">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 3: worker-east-03 (Worker Node with Alert) -->
+<article class="node-card p-space-base rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between transition-all hover:bg-surface-container relative" data-health="busy" data-node="worker-east-03" data-region="us-east" data-type="compute-intensive">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-base text-title-base text-on-surface font-bold">worker-east-03</span>
+<span class="px-space-xs py-space-xxs rounded font-label-xs text-label-xs bg-surface-container-highest text-outline">Worker</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">10.240.1.20 • us-east-1c</span>
+</div>
+<div class="inline-flex items-center gap-space-xxs px-space-xs py-space-xxs rounded bg-tertiary-container/20 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-xs text-label-xs font-bold">High Load</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Workers Active</span>
+<span class="font-caption text-caption text-on-surface font-bold">64 <span class="font-code-sm text-code-sm text-outline font-normal">/ 64 slots</span></span>
+</div>
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Tasks</span>
+<span class="font-caption text-caption text-tertiary font-bold">16 running</span>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">CPU Utilization (Saturated)</span>
+<span class="text-tertiary font-code-sm text-code-sm font-bold">91%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 91%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-xs text-label-xs pt-space-xxs">
+<span class="text-outline">Memory Buffer</span>
+<span class="text-on-surface font-code-sm text-code-sm">59.8 GB / 64 GB</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 93.4%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[13px] text-tertiary">bolt</span>
+<span>Rendezvous Ping: <strong class="text-on-surface font-code-sm text-code-sm font-normal">1.8ms</strong></span>
+</div>
+<button class="text-primary hover:underline font-caption text-caption flex items-center gap-space-xxs" onclick="inspectNode('worker-east-03')">
+<span>Re-route Queue</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 4: worker-west-01 (Worker Node) -->
+<article class="node-card p-space-base rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between transition-all hover:bg-surface-container" data-health="healthy" data-node="worker-west-01" data-region="us-west" data-type="memory-buffered">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-base text-title-base text-on-surface font-bold">worker-west-01</span>
+<span class="px-space-xs py-space-xxs rounded font-label-xs text-label-xs bg-surface-container-highest text-outline">Worker</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">10.241.0.42 • us-west-2a</span>
+</div>
+<div class="inline-flex items-center gap-space-xxs px-space-xs py-space-xxs rounded bg-surface-container-high">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+<span class="font-label-xs text-label-xs text-[#10b981]">Healthy</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Workers Active</span>
+<span class="font-caption text-caption text-on-surface font-bold">32 <span class="font-code-sm text-code-sm text-outline font-normal">/ 32 slots</span></span>
+</div>
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Tasks</span>
+<span class="font-caption text-caption text-primary font-bold">4 running</span>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">CPU Utilization</span>
+<span class="text-on-surface font-code-sm text-code-sm">34%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 34%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-xs text-label-xs pt-space-xxs">
+<span class="text-outline">Memory Buffer</span>
+<span class="text-on-surface font-code-sm text-code-sm">18.6 GB / 32 GB</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 58.1%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[13px] text-primary">bolt</span>
+<span>Rendezvous Ping: <strong class="text-on-surface font-code-sm text-code-sm font-normal">18.2ms</strong></span>
+</div>
+<button class="text-primary hover:underline font-caption text-caption flex items-center gap-space-xxs" onclick="inspectNode('worker-west-01')">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 5: worker-eu-01 (Worker Node) -->
+<article class="node-card p-space-base rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between transition-all hover:bg-surface-container" data-health="healthy" data-node="worker-eu-01" data-region="eu-central" data-type="io-optimized">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-base text-title-base text-on-surface font-bold">worker-eu-01</span>
+<span class="px-space-xs py-space-xxs rounded font-label-xs text-label-xs bg-surface-container-highest text-outline">Worker</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">10.242.4.11 • eu-central-1a</span>
+</div>
+<div class="inline-flex items-center gap-space-xxs px-space-xs py-space-xxs rounded bg-surface-container-high">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-xs text-label-xs text-primary">Idle</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Workers Active</span>
+<span class="font-caption text-caption text-on-surface font-bold">32 <span class="font-code-sm text-code-sm text-outline font-normal">/ 32 slots</span></span>
+</div>
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Tasks</span>
+<span class="font-caption text-caption text-on-surface font-bold">2 running</span>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">CPU Utilization</span>
+<span class="text-on-surface font-code-sm text-code-sm">12%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 12%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-xs text-label-xs pt-space-xxs">
+<span class="text-outline">Memory Buffer</span>
+<span class="text-on-surface font-code-sm text-code-sm">9.2 GB / 32 GB</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 28.7%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[13px] text-outline">public</span>
+<span>Rendezvous Ping: <strong class="text-on-surface font-code-sm text-code-sm font-normal">78.4ms</strong></span>
+</div>
+<button class="text-primary hover:underline font-caption text-caption flex items-center gap-space-xxs" onclick="inspectNode('worker-eu-01')">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 6: worker-draining-09 (Decommissioning) -->
+<article class="node-card p-space-base rounded-xl bg-surface-container-low/70 shadow-sm flex flex-col justify-between opacity-80 hover:opacity-100 transition-all" data-health="draining" data-node="worker-draining-09" data-region="us-east" data-type="compute-intensive">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-base text-title-base text-on-surface-variant line-through font-bold">worker-draining-09</span>
+<span class="px-space-xs py-space-xxs rounded font-label-xs text-label-xs bg-error-container text-on-error-container">Decommissioning</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">10.240.1.99 • us-east-1a</span>
+</div>
+<div class="inline-flex items-center gap-space-xxs px-space-xs py-space-xxs rounded bg-surface-container-high text-tertiary">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span class="font-label-xs text-label-xs">Draining</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Workers Active</span>
+<span class="font-caption text-caption text-outline">0 / 64 active</span>
+</div>
+<div class="flex flex-col p-space-xs rounded bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Tasks</span>
+<span class="font-caption text-caption text-outline">0 tasks</span>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">Graceful Drain Window</span>
+<span class="text-tertiary font-code-sm text-code-sm">18m remaining</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 75%;"></div>
+</div>
+<span class="font-label-xs text-label-xs text-outline pt-space-xxs">Reason: Routine kernel security patch schedule.</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[13px] text-error">block</span>
+<span>No new tasks dispatched</span>
+</div>
+<button class="text-error hover:underline font-caption text-caption flex items-center gap-space-xxs" onclick="terminateNode('worker-draining-09')">
+<span>Force Terminate</span>
+<span class="material-symbols-outlined text-[12px]">delete_forever</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Bottom Panel: Worker Pool Configuration & Auto-scaling Policy Drawer -->
+<section class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-lg relative z-10">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-base">
+<div class="flex flex-col gap-space-xxs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_mode</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Worker Pool Auto-Scaling & Backpressure Policy</span>
+</div>
+<p class="font-caption text-caption text-outline">
+            Configure dynamic worker allocation, backpressure dampeners, and min-heap timer leases for sub-millisecond execution dispatch.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant font-caption text-caption" onclick="resetSliders()">
+            Revert Defaults
+          </button>
+<button class="px-space-md py-space-xs rounded bg-primary-container text-on-primary-container hover:bg-primary font-caption text-caption font-bold flex items-center gap-space-xs" onclick="saveConfiguration()">
+<span class="material-symbols-outlined text-[14px]">save</span>
+<span>Apply Cluster Policy</span>
+</button>
+</div>
+</div>
+<!-- Settings Grid & Sliders -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Setting 1: Backpressure Saturation Trigger -->
+<div class="p-space-base rounded-lg bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-base text-title-base text-on-surface">Queue Backpressure Saturation</span>
+<span class="font-code-sm text-code-sm text-primary font-bold" id="backpressureVal">85%</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline">
+            Spills incoming tasks to secondary raft partitions when worker mailbox exceeds watermark.
+          </p>
+<input class="w-full accent-primary-container cursor-pointer" id="sliderBackpressure" max="98" min="50" oninput="updateSliderVal('backpressureVal', this.value, '%')" type="range" value="85"/>
+<div class="flex justify-between text-outline font-label-xs text-label-xs">
+<span>50% (Conservative)</span>
+<span>98% (Aggressive)</span>
+</div>
+</div>
+<!-- Setting 2: Scale-Out Velocity Threshold -->
+<div class="p-space-base rounded-lg bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-base text-title-base text-on-surface">Scale-Out Cooldown Delay</span>
+<span class="font-code-sm text-code-sm text-secondary font-bold" id="cooldownVal">45s</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline">
+            Dampens node provisioning oscillations during bursty burst orchestrations.
+          </p>
+<input class="w-full accent-secondary cursor-pointer" id="sliderCooldown" max="180" min="10" oninput="updateSliderVal('cooldownVal', this.value, 's')" step="5" type="range" value="45"/>
+<div class="flex justify-between text-outline font-label-xs text-label-xs">
+<span>10s</span>
+<span>180s</span>
+</div>
+</div>
+<!-- Setting 3: Max Worker Nodes Ceiling -->
+<div class="p-space-base rounded-lg bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-base text-title-base text-on-surface">Fleet Maximum Ceiling</span>
+<span class="font-code-sm text-code-sm text-tertiary font-bold" id="maxNodesVal">24 Nodes</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline">
+            Strict consensus boundary on dynamic worker auto-scale horizontally.
+          </p>
+<input class="w-full accent-tertiary cursor-pointer" id="sliderMaxNodes" max="64" min="12" oninput="updateSliderVal('maxNodesVal', this.value, ' Nodes')" type="range" value="24"/>
+<div class="flex justify-between text-outline font-label-xs text-label-xs">
+<span>12 (Current floor)</span>
+<span>64 (Max capacity)</span>
+</div>
+</div>
+</div>
+<!-- Policy Toggles Row -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-wrap items-center justify-between gap-space-base">
+<div class="flex items-center gap-space-lg flex-wrap">
+<!-- Toggle 1 -->
+<label class="flex items-center gap-space-sm cursor-pointer">
+<input checked="" class="w-4 h-4 rounded accent-primary-container" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-title-base text-title-base text-on-surface">Brokerless Rendezvous Matching</span>
+<span class="font-label-xs text-label-xs text-outline">Bypasses message broker for local socket dispatch</span>
+</div>
+</label>
+<!-- Toggle 2 -->
+<label class="flex items-center gap-space-sm cursor-pointer">
+<input checked="" class="w-4 h-4 rounded accent-primary-container" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-title-base text-title-base text-on-surface">Optimistic Concurrency Fence</span>
+<span class="font-label-xs text-label-xs text-outline">Aborts conflicting workflow turns instantly</span>
+</div>
+</label>
+<!-- Toggle 3 -->
+<label class="flex items-center gap-space-sm cursor-pointer">
+<input class="w-4 h-4 rounded accent-primary-container" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-title-base text-title-base text-on-surface">Aggressive Drain Eviction</span>
+<span class="font-label-xs text-label-xs text-outline">Instantly terminate in-flight workflows on drain</span>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span>Verified Raft state commit #77312</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none p-space-md rounded-lg bg-surface-container-high text-on-surface shadow-xl flex items-center gap-space-sm" id="toast">
+<span class="material-symbols-outlined text-primary text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-caption text-caption font-bold" id="toastMsg">Action executed</span>
+</div>
+<script>
+    function updateSliderVal(id, val, suffix) {
+      const el = document.getElementById(id);
+      if (el) el.innerText = val + suffix;
+    }
+
+    function showToast(msg, icon = 'check_circle', isError = false) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+      if (!toast) return;
+
+      toastMsg.innerText = msg;
+      toastIcon.innerText = icon;
+      toastIcon.className = isError 
+        ? 'material-symbols-outlined text-error text-[20px]' 
+        : 'material-symbols-outlined text-primary text-[20px]';
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    let maintenanceActive = false;
+    function toggleMaintenanceMode() {
+      maintenanceActive = !maintenanceActive;
+      const btn = document.getElementById('btnMaintenance');
+      if (maintenanceActive) {
+        btn.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface');
+        showToast('Maintenance Mode ENGAGED. New orchestrations paused.', 'warning');
+      } else {
+        btn.classList.remove('bg-tertiary-container', 'text-on-tertiary-container');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface');
+        showToast('Maintenance Mode CLEARED. Normal operation resumed.', 'check_circle');
+      }
+    }
+
+    function triggerRebalance() {
+      showToast('Initiating zero-downtime shard rebalancing across 12 nodes...', 'sync_alt');
+    }
+
+    function openProvisionModal() {
+      showToast('Triggering worker pool provisioning dialog on AWS provider...', 'add_circle');
+    }
+
+    function inspectNode(nodeId) {
+      showToast(`Loading deep telemetry trace for ${nodeId}...`, 'analytics');
+    }
+
+    function terminateNode(nodeId) {
+      if (confirm(`Force terminate node ${nodeId}? In-flight execution will be re-routed.`)) {
+        showToast(`Node ${nodeId} termination sequence initiated.`, 'delete_forever', true);
+        const card = document.querySelector(`[data-node="${nodeId}"]`);
+        if (card) {
+          card.style.opacity = '0.3';
+          card.style.pointerEvents = 'none';
+        }
+      }
+    }
+
+    let currentHealthFilter = 'all';
+
+    function setHealthFilter(health) {
+      currentHealthFilter = health;
+      document.querySelectorAll('.health-btn').forEach(btn => {
+        if (btn.getAttribute('data-health') === health) {
+          btn.classList.add('bg-surface-container-high', 'text-primary');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-surface-container-high', 'text-primary');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+      filterNodes();
+    }
+
+    function filterNodes() {
+      const region = document.getElementById('filterRegion').value;
+      const type = document.getElementById('filterType').value;
+      const search = (document.getElementById('nodeSearch').value || '').toLowerCase().trim();
+
+      const cards = document.querySelectorAll('.node-card');
+      cards.forEach(card => {
+        const cardRegion = card.getAttribute('data-region');
+        const cardType = card.getAttribute('data-type');
+        const cardHealth = card.getAttribute('data-health');
+        const cardNode = card.getAttribute('data-node').toLowerCase();
+
+        let visible = true;
+
+        if (region !== 'all' && cardRegion !== region) visible = false;
+        if (type !== 'all' && cardType !== type) visible = false;
+        if (currentHealthFilter !== 'all' && cardHealth !== currentHealthFilter) visible = false;
+        if (search && !cardNode.includes(search)) visible = false;
+
+        card.style.display = visible ? 'flex' : 'none';
+      });
+    }
+
+    function resetSliders() {
+      document.getElementById('sliderBackpressure').value = 85;
+      updateSliderVal('backpressureVal', 85, '%');
+
+      document.getElementById('sliderCooldown').value = 45;
+      updateSliderVal('cooldownVal', 45, 's');
+
+      document.getElementById('sliderMaxNodes').value = 24;
+      updateSliderVal('maxNodesVal', 24, ' Nodes');
+
+      showToast('Worker pool parameters reset to default.', 'refresh');
+    }
+
+    function saveConfiguration() {
+      showToast('Cluster policy snapshot saved and broadcast to Raft state store.', 'verified');
+    }
+  </script>
+</div></main></div></body></html>

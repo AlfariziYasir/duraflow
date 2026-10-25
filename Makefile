@@ -1,4 +1,4 @@
-.PHONY: build test vet fmt fmt-check up down ci
+.PHONY: build test vet fmt fmt-check up down ci web-dev web-build
 
 build:
 	go build ./...
@@ -22,3 +22,9 @@ down:
 	docker compose down
 
 ci: fmt-check vet test build
+
+web-dev:
+	cd web && bun run dev
+
+web-build:
+	cd web && bun run build
